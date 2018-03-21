@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PluggedIn</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header id="header">
+		<div class="float-wrap">
+			<div class="top-buttons fl-right">
+				<a href="#">Über uns</a>
+				<a href="#">Redaktion</a>
+				<div class="lang-switch fl-left">
+					<span v-on:click="switchLang" class="active">De</span>
+					<span v-on:click="switchLang">En</span>
+				</div>
+			</div>
+		</div>
+		<div class="logo-block fl-left">
+			<img src="img/logo.png">
+			<span class="title">Inform. Connect. Inspire</span>
+		</div>
+		<nav class="fl-right">
+			<div class="menu-btn fl-right" v-on:click="menuToggle"><span class="fl-left">Menu</span>
+				<div class="humburger fl-left">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<ul>
+				<li><a href="#"><img src="img/search.png" alt=""></a></li>
+				<li><a href="#">Design+lifestyle</a></li>
+				<li><a href="#">Trends</a></li>
+				<li><a href="#">Infodelight</a></li>
+				<li><a href="#">Smart Living</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="app" class="wrapper">
+		<div class="block slider">
+			<div class="small-title">
+				<span>Design+Lifestyle</span>
+				<span>Smart Living</span>
+			</div>
+				<span class="title">Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</span>
+				<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</span>
+				<div class="slider-nav" v-on:click="sliderNav">
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i class="active"></i>
+					<i></i>
+				</div>
+		</div>
+		<div class="block">
+			<span class="b-title">A place called Inspiration.</span>
+			<span class="text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam voluptatem.</span>
+			<button>Über die Autoren</button>
+			<button>Über das magazin</button>
+		</div>
+		<div class="block">
+			<div class="small-title">
+				<span>Design+Lifestyle</span>
+				<span>Smart Living</span>
+				</div>
+				<span class="title">Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</span>
+				<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</span>
+		</div>
+		<div class="block">
+			<div class="small-title">
+				<span>Design+Lifestyle</span>
+				<span>Smart Living</span>
+				</div>
+				<span class="title">Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</span>
+				<span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</span>
+		</div>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

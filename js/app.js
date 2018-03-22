@@ -2,14 +2,14 @@ var header = new Vue({
   el: '#header',
   methods:{
   	switchLang: function(event){
-  		document.querySelector('.lang-switch span.active').classList.remove('active');
+  		document.querySelector('.header__lang-switch .header__lang-btn_active').classList.remove('header__lang-btn_active');
   		if(event){
-  			event.target.classList.add('active');
+  			event.target.classList.add('header__lang-btn_active');
   		}
   	},
   	menuToggle: function(event){
   		if(event){
-  			event.target.closest('.menu-btn').classList.toggle('opened');
+  			event.target.closest('.header__menu-btn').classList.toggle('opened');
   		}
   	}
   }

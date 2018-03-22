@@ -1,12 +1,9 @@
-@import "_mixins.scss";
-//variables
-@import "variables.scss";
 //functions
 @import "functions.scss";
 //fonts
-@include font-face(Roboto-Regular, "../fonts/Roboto/Roboto-Regular", null, null, ttf);
-@include font-face(Roboto-Medium, "../fonts/Roboto/Roboto-Medium", null, null, ttf);
-@include font-face(Roboto-Light, "../fonts/Roboto/Roboto-Light", null, null, ttf);
+@import "fonts.scss";
+//variables
+@import "variables.scss";
 // help classes
 .fl-left{
 	float: left;
@@ -28,267 +25,265 @@ ul{
 	list-style: none;
 }
 
-@media #{$media} and ($feature: $medium) {
-  .wrapper{
-	.block{
-		width: 50% !important;
-    	padding: 0 15px !important;
-	}
-  }
+.header{
+	overflow: hidden;
+	padding: 20px 35px 10px;
+	background: $white;
 }
-@media #{$media} and ($feature: $small) {
-	.wrapper{
-	.block{
-		width: 100% !important;
-    	padding: 0 15px !important;
-    	border-width: 0 0 2px 0 !important;
+.header__nav{
+	margin-top: 23px;
+	li{
+		float: left;
+		margin-left: 5px;
+		padding: 0 23px;
+		border-left: 1px solid $black;
+		&:last-child{
+			padding-right: 0;
+		}
+		&:first-child{
+			border: none;
+		}
+		a{
+			font-family: Roboto-Regular;
+			font-size: 16px;
+			letter-spacing: 0.6px;
+			color: $black;
+			text-transform: uppercase;
+		}
 	}
-  }
 }
-@media #{$media} and ($feature: $menu-colapsed) {
-	header{
-		overflow: visible !important;
-		nav{
-			width: 100%;
-		    height: 25px;
-		    position: relative;
-			.menu-btn{
-				display: block !important;
-				&.opened ~ ul{
-					height: auto;
+.header__menu-btn{
+	display: none;
+	overflow: hidden;
+	cursor: pointer;
+}
+.humburger{
+	display: inline;
+}
+.hamburger__bar{
+	width: 30px;
+	height: 3px;
+	background: $black;
+	border-radius: 3px;
+	margin-bottom: 3px;
+	margin-left: 4px;
+}
+.header__top-buttons{
+	a{
+		float: left;
+		color:$black;
+		font-size: 14px;
+		margin-left: 25px;
+		padding: 3px 0;
+		font-family: Roboto-Regular;
+		letter-spacing: 0.7px;
+	}
+}
+.header__lang-switch{
+	margin-left: 20px;
+}
+.header__lang-btn{
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-family: Roboto-Regular;
+	color: $black;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 3px 5px;
+	border: border($black);
+	&.header__lang-btn_active{
+		color: $light-grey;
+		border: border($light-grey);
+	}
+}
+.header__logo-block{
+	margin-top: 8px;
+	*{
+		display: block;
+	}
+	img + .header__title{
+		margin-top: 9px;
+	}
+}
+.header__title{
+    word-spacing: 6px;
+    font-size: 14px;
+    font-family: Roboto-Light;
+}
+
+.block{
+	width: 50%;
+	min-height: 50px;
+	float: left;
+	height: 400px;
+	border-width: 0 0 2px 2px;
+	border-style: solid;
+	border-color: $white;
+	box-sizing: border-box;
+	&:first-child{
+		width: 75.1%;
+		background: url(/img/img1.jpg);
+		border-left: none;
+		padding: 0 18%;
+	}
+	&:nth-child(2){
+		width: 24.9%;
+		background: #323232;
+		padding: 0 32px;
+		color: $white;
+		.block__b-title{
+			display: block;
+			font-family: Roboto-Medium;
+			font-size: 24px;
+			margin: 35px 0 26px;
+		    line-height: 29px;
+		    letter-spacing: 1px;
+		}
+		.block__text{
+			display: block;
+			font-size: 14px;
+			text-align: left;
+			margin-bottom: 30px;
+			margin-top: 0;
+			line-height: 24px;
+		}
+	}
+	&:nth-child(3){
+		background: url(/img/img2.jpg);
+		border-left: none;
+		padding: 0 9%;
+	}
+	&:nth-child(4){
+		background: url(/img/img3.jpg);	
+		padding: 0 9%;
+	}
+	&.block_slider{
+		position: relative;
+		.slider-nav{
+			position: absolute;
+			bottom: 18px;
+			left: 50%;
+			margin-left: -74.5px;
+			i{
+				display: block;
+				float: left;
+				width: 4px;
+				height: 4px;
+				background: $slider-nav;
+				margin-left: 25px;
+				cursor: pointer;
+				&:first-child{
+					margin-left: 0;
+				}
+				&.active{
+					background: $white;
 				}
 			}
-			ul{
-				padding-left: 0;
-				position: absolute;
-			    z-index: 22;
-			    width: 100%;
-			    background: $white;
-			    margin-top: 0;
-		        top: 25px;
-		        height: 0;
-		        overflow: hidden;
-			}
-			li{
-				float: none !important;
-				border-left: none !important;
-				border-bottom: border($black) !important;
-				width: 100%;
-				padding-top: 4px !important;
-				padding-bottom: 4px !important;
-			}
+		}
+	}
+}
+.block__button{
+	font-family: Roboto-Regular;
+	font-size: 12px;
+	letter-spacing: 0.7px;
+	text-transform: uppercase;
+	display: table;
+	min-width: 150px;
+	margin-bottom: 8px;
+	border: border($white);
+	background: transparent;
+	color: $white;
+	cursor: pointer;
+	box-sizing: border-box;
+    padding: 8px 5px 8px 15px;
+}
+.block__small-title{
+	display: block;
+	font-family: Roboto-Medium;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 115px;
+	letter-spacing: 0.7px;
+	span{
+		padding: 0 7px;
+		color: $white;
+		text-transform: uppercase;
+		border-left: border($white);
+		&:last-child{
+			border-right: border($white);
+		}
+	}
+}
+.block__title{
+	display: block;
+	font-size: 24px;
+	font-family: Roboto-Medium;
+	color: $white;
+	text-align: center;
+	margin-top: 32px;
+	line-height: 29px;
+}
+.block__text{
+	display: block;
+	font-size: 13.99px;
+	font-family: Roboto-Regular;
+	text-align: center;
+	color: $white;
+    margin-top: 29px;
+	line-height: 24px;
+}
+
+@media #{$media} and ($feature: $medium) {
+	.block, .block:nth-child(1), .block:nth-child(2){
+		width: 50%;
+		padding: 0 15px;
+	}
+}
+@media #{$media} and ($feature: $small) {
+	.block, .block:nth-child(1), .block:nth-child(2){
+		width: 100%;
+    	padding: 0 15px;
+    	border-width: 0 0 2px 0;
+	}
+}
+@media #{$media} and ($feature: $menu-colapsed) {
+	.header{
+		overflow: visible;
+	}
+	.header__menu-btn{
+		display: block;
+		&.opened ~ ul{
+			height: auto;
+		}
+	}
+	.header__nav{
+		width: 100%;
+	    height: 25px;
+	    position: relative;
+		ul{
+			padding-left: 0;
+			position: absolute;
+		    z-index: 22;
+		    width: 100%;
+		    background: $white;
+		    margin-top: 0;
+	        top: 25px;
+	        height: 0;
+	        overflow: hidden;
+		}
+		li{
+			float: none;
+			border-left: none;
+			border-bottom: border($black);
+			width: 100%;
+			padding-top: 4px;
+			padding-bottom: 4px;
 		}
 	}
 }
 @media #{$media} and ($feature: $minimal) {
-	header{
-		padding: 20px 15px 10px !important;
-	}
-}
-
-header{
-	overflow: hidden;
-	padding: 20px 35px 10px;
-	background: $white;
-	.top-buttons{
-		a{
-			float: left;
-			color:$black;
-			font-size: 14px;
-			margin-left: 25px;
-			padding: 3px 0;
-			font-family: Roboto-Regular;
-    		letter-spacing: 0.7px;
-		}
-	}
-	.lang-switch{
-		margin-left: 20px;
-		span{
-			display: block;
-			float: left;
-			font-size: 14px;
-			font-family: Roboto-Regular;
-			color: $black;
-			text-transform: uppercase;
-			cursor: pointer;
-			padding: 3px 5px;
-			border: border($black);
-			&.active{
-				color: $light-grey;
-				border: border($light-grey);
-			}
-		}
-	}
-	.logo-block{
-		margin-top: 8px;
-		.title{
-		    margin-top: 9px;
-		    word-spacing: 6px;
-		    font-size: 14px;
-		    font-family: Roboto-Light;
-		}
-		*{
-			display: block;
-		}
-	}
-	nav{
-		margin-top: 23px;
-		.menu-btn{
-				display: none;
-				overflow: hidden;
-				cursor: pointer;
-				.humburger{
-					display: inline;
-					span{
-						display: block;
-						width: 30px;
-						height: 3px;
-						background: $black;
-						border-radius: 3px;
-						margin-bottom: 3px;
-						margin-left: 4px;
-					}
-				}
-			}
-		li{
-			float: left;
-			margin-left: 5px;
-			padding: 0 23px;
-			border-left: 1px solid $black;
-			&:last-child{
-				padding-right: 0;
-			}
-			&:first-child{
-				border: none;
-			}
-			a{
-				font-family: Roboto-Regular;
-				font-size: 16px;
-				letter-spacing: 0.6px;
-				color: $black;
-				text-transform: uppercase;
-			}
-		}
-	}
-	
-}
-.wrapper{
-	.block{
-		&:first-child{
-			width: 75.1%;
-			background: url(/img/img1.jpg);
-			border-left: none;
-			padding: 0 18%;
-		}
-		&:nth-child(2){
-			width: 24.9%;
-			background: #323232;
-			padding: 0 32px;
-			color: $white;
-			.b-title{
-				display: block;
-				font-family: Roboto-Medium;
-				font-size: 24px;
-				margin: 35px 0 26px;
-			    line-height: 29px;
-			    letter-spacing: 1px;
-			}
-			.text{
-				display: block;
-				font-size: 14px;
-				text-align: left;
-				margin-bottom: 30px;
-				margin-top: 0;
-				line-height: 24px;
-			}
-			button{
-				font-size: 12px;
-				text-transform: uppercase;
-				display: block;
-				min-width: 150px;
-				margin-bottom: 8px;
-				border: border($white);
-				background: transparent;
-				color: $white;
-				cursor: pointer;
-				padding: 8px 5px;
-			}
-		}
-		&:nth-child(3){
-			background: url(/img/img2.jpg);
-			border-left: none;
-			padding: 0 9%;
-		}
-		&:nth-child(4){
-			background: url(/img/img3.jpg);	
-			padding: 0 9%;
-		}
-		width: 50%;
-		min-height: 50px;
-		float: left;
-		height: 400px;
-		border-width: 0 0 2px 2px;
-		border-style: solid;
-		border-color: $white;
-		box-sizing: border-box;
-		&.slider{
-			position: relative;
-			.slider-nav{
-				position: absolute;
-				bottom: 18px;
-    			left: 50%;
-    			margin-left: -74.5px;
-				i{
-					display: block;
-					float: left;
-					width: 4px;
-					height: 4px;
-					background: $slider-nav;
-					margin-left: 25px;
-					cursor: pointer;
-					&:first-child{
-						margin-left: 0;
-					}
-					&.active{
-						background: $white;
-					}
-				}
-			}
-		}
-		.small-title{
-			display: block;
-			font-family: Roboto-Medium;
-			font-size: 14px;
-			text-align: center;
-			margin-top: 115px;
-			letter-spacing: 0.7px;
-			span{
-				padding: 0 7px;
-				color: $white;
-				text-transform: uppercase;
-				border-left: border($white);
-				&:last-child{
-					border-right: border($white);
-				}
-			}
-		}
-		.title{
-			display: block;
-			font-size: 24px;
-			font-family: Roboto-Medium;
-			color: $white;
-			text-align: center;
-			margin-top: 32px;
-			line-height: 29px;
-		}
-		.text{
-			display: block;
-			font-size: 13.99px;
-			font-family: Roboto-Regular;
-			text-align: center;
-			color: $white;
-		    margin-top: 29px;
-    		line-height: 24px;
-		}
+	.header{
+		padding: 20px 15px 10px;
 	}
 }

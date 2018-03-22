@@ -1,18 +1,4 @@
 // =============================================================================
-// String Replace
-// =============================================================================
-
-@function str-replace($string, $search, $replace: "") {
-	$index: str-index($string, $search);
-
-	@if $index {
-		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-	}
-
-	@return $string;
-}
-
-// =============================================================================
 // Font Face
 // =============================================================================
 
@@ -42,3 +28,7 @@
 		src: $src;
 	}
 }
+
+@include font-face(Roboto-Regular, "../fonts/Roboto/Roboto-Regular", null, null, ttf);
+@include font-face(Roboto-Medium, "../fonts/Roboto/Roboto-Medium", null, null, ttf);
+@include font-face(Roboto-Light, "../fonts/Roboto/Roboto-Light", null, null, ttf);

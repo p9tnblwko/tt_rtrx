@@ -32,6 +32,8 @@ ul {
   overflow: hidden;
   padding: 20px 35px 10px;
   background: #fff; }
+  .header .header__logo-block {
+    margin-top: 8px; }
 
 .header__nav {
   margin-top: 23px; }
@@ -93,12 +95,11 @@ ul {
     color: #cccccc;
     border: 1px solid #cccccc; }
 
-.header__logo-block {
-  margin-top: 8px; }
-  .header__logo-block * {
-    display: block; }
-  .header__logo-block img + .header__title {
-    margin-top: 9px; }
+.header__logo-block * {
+  display: block; }
+
+.header__logo-block img + .header__title {
+  margin-top: 9px; }
 
 .header__title {
   word-spacing: 6px;
@@ -135,7 +136,6 @@ ul {
       display: block;
       font-size: 14px;
       text-align: left;
-      margin-bottom: 30px;
       margin-top: 0;
       line-height: 24px; }
   .block:nth-child(3) {
@@ -165,6 +165,9 @@ ul {
         .block.block_slider .slider-nav i.active {
           background: #fff; }
 
+.block__b-title + .block__text {
+  margin-bottom: 30px; }
+
 .block__button {
   font-family: Roboto-Regular;
   font-size: 12px;
@@ -172,13 +175,15 @@ ul {
   text-transform: uppercase;
   display: table;
   min-width: 150px;
-  margin-bottom: 8px;
   border: 1px solid #fff;
   background: transparent;
   color: #fff;
   cursor: pointer;
   box-sizing: border-box;
   padding: 8px 5px 8px 15px; }
+
+.block__text + .block__button {
+  margin-bottom: 8px; }
 
 .block__small-title {
   display: block;
@@ -201,8 +206,10 @@ ul {
   font-family: Roboto-Medium;
   color: #fff;
   text-align: center;
-  margin-top: 32px;
   line-height: 29px; }
+
+.block__small-title + .block__title {
+  margin-top: 32px; }
 
 .block__text {
   display: block;
@@ -210,8 +217,10 @@ ul {
   font-family: Roboto-Regular;
   text-align: center;
   color: #fff;
-  margin-top: 29px;
   line-height: 24px; }
+
+.block__title + .block__text {
+  margin-top: 29px; }
 
 @media screen and (max-width: 1024px) {
   .block, .block:nth-child(1), .block:nth-child(2) {

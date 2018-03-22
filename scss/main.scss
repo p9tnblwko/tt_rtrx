@@ -29,6 +29,9 @@ ul{
 	overflow: hidden;
 	padding: 20px 35px 10px;
 	background: $white;
+	.header__logo-block{
+		margin-top: 8px;
+	}
 }
 .header__nav{
 	margin-top: 23px;
@@ -98,7 +101,6 @@ ul{
 	}
 }
 .header__logo-block{
-	margin-top: 8px;
 	*{
 		display: block;
 	}
@@ -144,7 +146,6 @@ ul{
 			display: block;
 			font-size: 14px;
 			text-align: left;
-			margin-bottom: 30px;
 			margin-top: 0;
 			line-height: 24px;
 		}
@@ -183,6 +184,9 @@ ul{
 		}
 	}
 }
+.block__b-title + .block__text{
+	margin-bottom: 30px;
+}
 .block__button{
 	font-family: Roboto-Regular;
 	font-size: 12px;
@@ -190,13 +194,15 @@ ul{
 	text-transform: uppercase;
 	display: table;
 	min-width: 150px;
-	margin-bottom: 8px;
 	border: border($white);
 	background: transparent;
 	color: $white;
 	cursor: pointer;
 	box-sizing: border-box;
     padding: 8px 5px 8px 15px;
+}
+.block__text + .block__button{
+	margin-bottom: 8px;
 }
 .block__small-title{
 	display: block;
@@ -217,21 +223,25 @@ ul{
 }
 .block__title{
 	display: block;
-	font-size: 24px;
+	font-size: $block-title-font-size;
 	font-family: Roboto-Medium;
 	color: $white;
 	text-align: center;
+	line-height: $block-title-line-height;
+}
+.block__small-title + .block__title{
 	margin-top: 32px;
-	line-height: 29px;
 }
 .block__text{
 	display: block;
-	font-size: 13.99px;
+	font-size: $block__text-font-size;
 	font-family: Roboto-Regular;
 	text-align: center;
 	color: $white;
-    margin-top: 29px;
-	line-height: 24px;
+	line-height: $block__text-font-size + 10.01;
+}
+.block__title + .block__text{
+	margin-top: 29px;
 }
 
 @media #{$media} and ($feature: $medium) {

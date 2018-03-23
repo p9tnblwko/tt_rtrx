@@ -20,8 +20,8 @@ var app = new Vue({
 	methods: {
 		sliderNav: function(event){
 			if(event){
-				event.target.parentNode.querySelector('i.active').classList.remove('active');
-				event.target.classList.add('active');
+				event.target.parentNode.querySelector('.slider-nav__dot_active').classList.remove('slider-nav__dot_active');
+				event.target.classList.add('slider-nav__dot_active');
 			}
 		}
 	}

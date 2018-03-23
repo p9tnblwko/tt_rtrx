@@ -159,30 +159,32 @@ ul{
 		background: url(/img/img3.jpg);	
 		padding: 0 9%;
 	}
-	&.block_slider{
-		position: relative;
-		.slider-nav{
-			position: absolute;
-			bottom: 18px;
-			left: 50%;
-			margin-left: -74.5px;
-			i{
-				display: block;
-				float: left;
-				width: 4px;
-				height: 4px;
-				background: $slider-nav;
-				margin-left: 25px;
-				cursor: pointer;
-				&:first-child{
-					margin-left: 0;
-				}
-				&.active{
-					background: $white;
-				}
-			}
-		}
+}
+.block_slider{
+	position: relative;
+	.slider-nav{
+		position: absolute;
+		bottom: 18px;
+		left: 50%;
+		margin-left: -74.5px;
 	}
+}
+.slider-nav{
+}
+.slider-nav__dot{
+	display: block;
+	float: left;
+	width: 4px;
+	height: 4px;
+	background: $slider-nav;
+	margin-left: 25px;
+	cursor: pointer;
+	&:first-child{
+		margin-left: 0;
+	}
+}
+.slider-nav__dot_active{
+	background: $white;
 }
 .block__b-title + .block__text{
 	margin-bottom: 30px;
